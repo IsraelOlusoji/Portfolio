@@ -16,10 +16,10 @@ import {
   User,
   Briefcase,
   Code,
-  MessageSquare,
   Menu,
   X
 } from 'lucide-react';
+import Image from 'next/image';
 
 interface Testimonial {
   id: number;
@@ -257,7 +257,7 @@ const Portfolio: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                I'm a passionate frontend developer with over 5 years of experience in creating innovative web applications. My journey in technology started with a curiosity about how things work, which evolved into a love for building solutions that make a difference.
+                I&apos;m a passionate frontend developer with over 5 years of experience in creating innovative web applications. My journey in technology started with a curiosity about how things work, which evolved into a love for building solutions that make a difference.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
                 I specialize in React, Next.js, TypeScript, and modern web technologies. My approach combines technical excellence with user-centered design, ensuring every project not only functions flawlessly but also provides an exceptional user experience.
@@ -291,9 +291,11 @@ const Portfolio: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <div key={project.id} className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-purple-400/50 transition-all duration-300 transform hover:scale-105">
-                <img 
+                <Image 
                   src={project.image} 
                   alt={project.title}
+                  width={500}
+                  height={192}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
@@ -390,7 +392,7 @@ const Portfolio: React.FC = () => {
                     <Star key={i} size={20} className="text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-300 mb-6 italic leading-relaxed">"{testimonial.content}"</p>
+                <p className="text-gray-300 mb-6 italic leading-relaxed">{testimonial.content}</p>
                 <div className="border-t border-white/10 pt-4">
                   <div className="font-semibold text-white">{testimonial.name}</div>
                   <div className="text-sm text-gray-400">{testimonial.role}</div>
