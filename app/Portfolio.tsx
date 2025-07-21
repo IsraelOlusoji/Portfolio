@@ -275,7 +275,13 @@ const Portfolio: React.FC = () => {
             </div>
             <div className="relative">
               <div className="w-80 h-80 mx-auto bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                <User size={120} className="text-white" />
+              <Image
+                src="/profile.jpg"
+                alt="Profile picture"
+                width={320}
+                height={320}
+                className="rounded-full w-80 h-80 object-cover border-4 border-white/20 shadow-lg"
+              />
               </div>
             </div>
           </div>
